@@ -1,6 +1,7 @@
+using System.Collections.Generic;
+
 namespace Contoso.Apps.Insurance.Data
 {
-
     // PolicyHolders
     public class PolicyHolder
     {
@@ -76,16 +77,17 @@ namespace Contoso.Apps.Insurance.Data
         public System.DateTime ExpirationDate { get; set; }
 
         // Reverse navigation
-        public virtual System.Collections.Generic.ICollection<Dependent> Dependents { get; set; } // Dependents.FK_Dependents_PolicyHolders
+        public virtual ICollection<Dependent> Dependents { get; set; } // Dependents.FK_Dependents_PolicyHolders
 
         // Foreign keys
         public virtual Person Person { get; set; } // FK_PolicyHolders_People
+
         public virtual Policy Policy { get; set; } // FK_PolicyHolders_Policies
 
         public PolicyHolder()
         {
             Active = false;
-            Dependents = new System.Collections.Generic.List<Dependent>();
+            Dependents = new List<Dependent>();
         }
     }
 }

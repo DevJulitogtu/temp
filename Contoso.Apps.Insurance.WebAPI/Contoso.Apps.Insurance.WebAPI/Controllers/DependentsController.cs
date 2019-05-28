@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using Contoso.Apps.Insurance.Data;
+using Contoso.Apps.Insurance.Data.Logic;
+using Contoso.Apps.Insurance.Data.Mapping;
 using Microsoft.AspNetCore.Mvc;
+using Dependent = Contoso.Apps.Insurance.Data.DTOs.Dependent;
 
 namespace Contoso.Apps.Insurance.WebAPI.Controllers
 {
@@ -20,7 +25,7 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         }
 
         // GET api/dependents/5
-        public Contoso.Apps.Insurance.Data.DTOs.Dependent GetDependent(int id)
+        public Dependent GetDependent(int id)
         {
             Contoso.Apps.Insurance.Data.DTOs.Dependent dependent;
 

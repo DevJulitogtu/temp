@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Contoso.Apps.Insurance.Data.Mapping
+﻿namespace Contoso.Apps.Insurance.Data.Mapping
 {
     public static class DependentMapping
     {
-        public static DTOs.Dependent MapEntityToDto(Data.Dependent source)
+        public static DTOs.Dependent MapEntityToDto(Dependent source)
         {
             var destination = new DTOs.Dependent
             {
@@ -32,9 +26,9 @@ namespace Contoso.Apps.Insurance.Data.Mapping
             return destination;
         }
 
-        public static Data.Dependent MapDtoToEntity(DTOs.Dependent source)
+        public static Dependent MapDtoToEntity(DTOs.Dependent source)
         {
-            var destination = new Data.Dependent
+            var destination = new Dependent
             {
                 Id = source.Id,
                 Active = source.Active,

@@ -1,14 +1,15 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Contoso.Apps.Insurance.Data.DTOs
 {
-
     // PolicyHolders
     [DataContract]
+    [Table("PolicyHolders")]
     public class PolicyHolder
     {
-
         ///<summary>
         /// Id (Primary key)
         ///</summary>
@@ -31,13 +32,13 @@ namespace Contoso.Apps.Insurance.Data.DTOs
         /// StartDate
         ///</summary>
         [DataMember]
-        public System.DateTime? StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         ///<summary>
         /// EndDate
         ///</summary>
         [DataMember]
-        public System.DateTime? EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         ///<summary>
         /// Username (length: 50)
@@ -85,13 +86,13 @@ namespace Contoso.Apps.Insurance.Data.DTOs
         /// EffectiveDate
         ///</summary>
         [DataMember]
-        public System.DateTime EffectiveDate { get; set; }
+        public DateTime EffectiveDate { get; set; }
 
         ///<summary>
         /// ExpirationDate
         ///</summary>
         [DataMember]
-        public System.DateTime ExpirationDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
 
         [DataMember]
         public int Dependents_Count { get; set; }

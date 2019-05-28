@@ -1,15 +1,11 @@
 using System.Runtime.Serialization;
 
-#pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
-
 namespace Contoso.Apps.Insurance.Data.DTOs
 {
-
     // Dependents
     [DataContract]
     public class Dependent
     {
-
         ///<summary>
         /// Id (Primary key)
         ///</summary>

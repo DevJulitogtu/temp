@@ -1,6 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using Contoso.Apps.Insurance.Data;
+using Contoso.Apps.Insurance.Data.Logic;
+using Contoso.Apps.Insurance.Data.Mapping;
+using Contoso.Apps.Insurance.Data.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Contoso.Apps.Insurance.WebAPI.Controllers
 {

@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using Contoso.Apps.Insurance.Data;
+using Contoso.Apps.Insurance.Data.Logic;
+using Contoso.Apps.Insurance.Data.Mapping;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Contoso.Apps.Insurance.WebAPI.Controllers
@@ -18,9 +22,9 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         }
 
         // GET api/people
-        public IList<Contoso.Apps.Insurance.Data.DTOs.Person> GetAllPeople(bool getPeopleWhoAreNotPolicyHolders = false)
+        public IList<Data.DTOs.Person> GetAllPeople(bool getPeopleWhoAreNotPolicyHolders = false)
         {
-            List<Contoso.Apps.Insurance.Data.DTOs.Person> people;
+            List<Data.DTOs.Person> people;
 
             using (var actions = new PersonActions(_connectionString))
             {

@@ -1,14 +1,10 @@
-
-using System.Runtime.Serialization;
-using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace Contoso.Apps.Insurance.Data
 {
-
     // Policies
     public class Policy
     {
-
         ///<summary>
         /// Id (Primary key)
         ///</summary>
@@ -35,11 +31,11 @@ namespace Contoso.Apps.Insurance.Data
         public decimal DefaultOutOfPocketMax { get; set; }
 
         // Reverse navigation
-        public virtual System.Collections.Generic.ICollection<PolicyHolder> PolicyHolders { get; set; } // PolicyHolders.FK_PolicyHolders_Policies
+        public virtual ICollection<PolicyHolder> PolicyHolders { get; set; } // PolicyHolders.FK_PolicyHolders_Policies
 
         public Policy()
         {
-            PolicyHolders = new System.Collections.Generic.List<PolicyHolder>();
+            PolicyHolders = new List<PolicyHolder>();
         }
     }
 

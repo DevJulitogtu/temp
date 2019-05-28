@@ -1,14 +1,12 @@
-using System.Runtime.Serialization;
-
-#pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Contoso.Apps.Insurance.Data
 {
-
     // People
+    [Table("People")]
     public class Person
     {
-
         ///<summary>
         /// Id (Primary key)
         ///</summary>
@@ -55,13 +53,14 @@ namespace Contoso.Apps.Insurance.Data
         public string Postcode { get; set; }
 
         // Reverse navigation
-        public virtual System.Collections.Generic.ICollection<Dependent> Dependents { get; set; } // Dependents.FK_Dependents_People
-        public virtual System.Collections.Generic.ICollection<PolicyHolder> PolicyHolders { get; set; } // PolicyHolders.FK_PolicyHolders_People
+        public virtual ICollection<Dependent> Dependents { get; set; } // Dependents.FK_Dependents_People
+
+        public virtual ICollection<PolicyHolder> PolicyHolders { get; set; } // PolicyHolders.FK_PolicyHolders_People
 
         public Person()
         {
-            Dependents = new System.Collections.Generic.List<Dependent>();
-            PolicyHolders = new System.Collections.Generic.List<PolicyHolder>();
+            Dependents = new List<Dependent>();
+            PolicyHolders = new List<PolicyHolder>();
         }
     }
 

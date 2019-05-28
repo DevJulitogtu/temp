@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using Contoso.Apps.Insurance.Data;
+using Contoso.Apps.Insurance.Data.Mapping;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Contoso.Apps.Insurance.WebAPI.Controllers
@@ -9,7 +12,7 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         private readonly string _connectionString = EncryptionHelper.SecretConnectionString;
 
         // GET api/policies
-        public IList<Contoso.Apps.Insurance.Data.DTOs.Policy> GetPolicies()
+        public IList<Data.DTOs.Policy> GetPolicies()
         {
             List<Data.DTOs.Policy> policies;
 
@@ -22,9 +25,9 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         }
 
         // GET api/people/5
-        public Contoso.Apps.Insurance.Data.DTOs.Policy GetPolicy(int id)
+        public Data.DTOs.Policy GetPolicy(int id)
         {
-            Contoso.Apps.Insurance.Data.DTOs.Policy policy;
+            Data.DTOs.Policy policy;
 
             using (var ctx = new ContosoInsuranceContext(_connectionString))
             {

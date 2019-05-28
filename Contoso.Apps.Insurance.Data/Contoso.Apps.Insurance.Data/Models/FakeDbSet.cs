@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 namespace Contoso.Apps.Insurance.Data
 {
 
@@ -20,7 +24,7 @@ namespace Contoso.Apps.Insurance.Data
     //          }
     //      }
     //      Read more about it here: https://msdn.microsoft.com/en-us/data/dn314431.aspx
-    public class FakeDbSet<TEntity> : System.Data.Entity.DbSet<TEntity>, IQueryable, System.Collections.Generic.IEnumerable<TEntity>, System.Data.Entity.Infrastructure.IDbAsyncEnumerable<TEntity> where TEntity : class
+    public class FakeDbSet<TEntity> : DbSet<TEntity>, IQueryable, IEnumerable<TEntity>, System.Data.Entity.Infrastructure.IDbAsyncEnumerable<TEntity> where TEntity : class
     {
         private readonly System.Reflection.PropertyInfo[] _primaryKeys;
         private readonly System.Collections.ObjectModel.ObservableCollection<TEntity> _data;
@@ -56,14 +60,14 @@ namespace Contoso.Apps.Insurance.Data
             return keyQuery.SingleOrDefault();
         }
 
-        public override System.Threading.Tasks.Task<TEntity> FindAsync(System.Threading.CancellationToken cancellationToken, params object[] keyValues)
+        public override Task<TEntity> FindAsync(System.Threading.CancellationToken cancellationToken, params object[] keyValues)
         {
-            return System.Threading.Tasks.Task<TEntity>.Factory.StartNew(() => Find(keyValues), cancellationToken);
+            return Task<TEntity>.Factory.StartNew(() => Find(keyValues), cancellationToken);
         }
 
-        public override System.Threading.Tasks.Task<TEntity> FindAsync(params object[] keyValues)
+        public override Task<TEntity> FindAsync(params object[] keyValues)
         {
-            return System.Threading.Tasks.Task<TEntity>.Factory.StartNew(() => Find(keyValues));
+            return Task<TEntity>.Factory.StartNew(() => Find(keyValues));
         }
 
         public override System.Collections.Generic.IEnumerable<TEntity> AddRange(System.Collections.Generic.IEnumerable<TEntity> entities)
@@ -173,14 +177,14 @@ namespace Contoso.Apps.Insurance.Data
             return _inner.Execute<TResult>(expression);
         }
 
-        public System.Threading.Tasks.Task<object> ExecuteAsync(System.Linq.Expressions.Expression expression, System.Threading.CancellationToken cancellationToken)
+        public Task<object> ExecuteAsync(System.Linq.Expressions.Expression expression, System.Threading.CancellationToken cancellationToken)
         {
-            return System.Threading.Tasks.Task.FromResult(Execute(expression));
+            return Task.FromResult(Execute(expression));
         }
 
-        public System.Threading.Tasks.Task<TResult> ExecuteAsync<TResult>(System.Linq.Expressions.Expression expression, System.Threading.CancellationToken cancellationToken)
+        public Task<TResult> ExecuteAsync<TResult>(System.Linq.Expressions.Expression expression, System.Threading.CancellationToken cancellationToken)
         {
-            return System.Threading.Tasks.Task.FromResult(Execute<TResult>(expression));
+            return Task.FromResult(Execute<TResult>(expression));
         }
     }
 
@@ -224,9 +228,9 @@ namespace Contoso.Apps.Insurance.Data
             _inner.Dispose();
         }
 
-        public System.Threading.Tasks.Task<bool> MoveNextAsync(System.Threading.CancellationToken cancellationToken)
+        public Task<bool> MoveNextAsync(System.Threading.CancellationToken cancellationToken)
         {
-            return System.Threading.Tasks.Task.FromResult(_inner.MoveNext());
+            return Task.FromResult(_inner.MoveNext());
         }
 
         public T Current

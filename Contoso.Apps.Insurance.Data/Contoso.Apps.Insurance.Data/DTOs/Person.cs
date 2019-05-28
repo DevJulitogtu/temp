@@ -1,15 +1,12 @@
+using System.Collections.Generic;
 using System.Runtime.Serialization;
-
-#pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 namespace Contoso.Apps.Insurance.Data.DTOs
 {
-
     // People
     [DataContract]
     public class Person
     {
-
         ///<summary>
         /// Id (Primary key)
         ///</summary>
@@ -66,7 +63,7 @@ namespace Contoso.Apps.Insurance.Data.DTOs
 
         // Reverse navigation
         [DataMember]
-        public System.Collections.Generic.List<Dependent> Dependents { get; set; } // Dependents.FK_Dependents_People
+        public List<Dependent> Dependents { get; set; } // Dependents.FK_Dependents_People
         //[DataMember]
         //public System.Collections.Generic.List<PolicyHolder> PolicyHolders { get; set; } // PolicyHolders.FK_PolicyHolders_People
 
@@ -76,7 +73,7 @@ namespace Contoso.Apps.Insurance.Data.DTOs
 
         public Person()
         {
-            Dependents = new System.Collections.Generic.List<Dependent>();
+            Dependents = new List<Dependent>();
             //PolicyHolders = new System.Collections.Generic.List<PolicyHolder>();
         }
 

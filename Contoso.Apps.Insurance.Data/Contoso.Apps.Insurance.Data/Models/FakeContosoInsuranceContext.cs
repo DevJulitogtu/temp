@@ -1,14 +1,17 @@
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 namespace Contoso.Apps.Insurance.Data
 {
-
-    using System.Linq;
-
     public class FakeContosoInsuranceContext : IContosoInsuranceContext
     {
-        public System.Data.Entity.DbSet<Dependent> Dependents { get; set; }
-        public System.Data.Entity.DbSet<Person> People { get; set; }
-        public System.Data.Entity.DbSet<Policy> Policies { get; set; }
-        public System.Data.Entity.DbSet<PolicyHolder> PolicyHolders { get; set; }
+        public DbSet<Dependent> Dependents { get; set; }
+
+        public DbSet<Person> People { get; set; }
+
+        public DbSet<Policy> Policies { get; set; }
+
+        public DbSet<PolicyHolder> PolicyHolders { get; set; }
 
         public FakeContosoInsuranceContext()
         {
@@ -19,22 +22,23 @@ namespace Contoso.Apps.Insurance.Data
         }
 
         public int SaveChangesCount { get; private set; }
+
         public int SaveChanges()
         {
             ++SaveChangesCount;
             return 1;
         }
 
-        public System.Threading.Tasks.Task<int> SaveChangesAsync()
+        public Task<int> SaveChangesAsync()
         {
             ++SaveChangesCount;
-            return System.Threading.Tasks.Task<int>.Factory.StartNew(() => 1);
+            return Task<int>.Factory.StartNew(() => 1);
         }
 
-        public System.Threading.Tasks.Task<int> SaveChangesAsync(System.Threading.CancellationToken cancellationToken)
+        public Task<int> SaveChangesAsync(System.Threading.CancellationToken cancellationToken)
         {
             ++SaveChangesCount;
-            return System.Threading.Tasks.Task<int>.Factory.StartNew(() => 1, cancellationToken);
+            return Task<int>.Factory.StartNew(() => 1, cancellationToken);
         }
 
         protected virtual void Dispose(bool disposing)

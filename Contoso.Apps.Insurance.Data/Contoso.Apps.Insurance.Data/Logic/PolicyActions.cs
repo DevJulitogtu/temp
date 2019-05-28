@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Contoso.Apps.Insurance.Data.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace Contoso.Apps.Insurance.Data.Logic
 {
@@ -57,7 +54,7 @@ namespace Contoso.Apps.Insurance.Data.Logic
 
                 _db.SaveChanges();
             }
-            catch (DbEntityValidationException dev)
+            catch (Exception dev)
             {
                 throw;
             }

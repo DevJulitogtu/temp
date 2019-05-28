@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Contoso.Apps.Insurance.Data.ViewModels;
 
 namespace Contoso.Apps.Insurance.Data.Mapping
 {
     public static class PolicyHolderMapping
     {
-        public static DTOs.PolicyHolder MapEntityToDto(Data.PolicyHolder source)
+        public static DTOs.PolicyHolder MapEntityToDto(PolicyHolder source)
         {
             var destination = new DTOs.PolicyHolder
             {
@@ -51,9 +47,9 @@ namespace Contoso.Apps.Insurance.Data.Mapping
             return destination;
         }
 
-        public static Data.PolicyHolder MapDtoToEntity(DTOs.PolicyHolder source)
+        public static PolicyHolder MapDtoToEntity(DTOs.PolicyHolder source)
         {
-            var destination = new Data.PolicyHolder
+            var destination = new PolicyHolder
             {
                 Id = source.Id,
                 Active = source.Active,
@@ -92,7 +88,7 @@ namespace Contoso.Apps.Insurance.Data.Mapping
             return destination;
         }
 
-        public static ViewModels.PolicyHolderViewModel MapDtoToViewModel(DTOs.PolicyHolder source)
+        public static PolicyHolderViewModel MapDtoToViewModel(DTOs.PolicyHolder source)
         {
             var destination = new PolicyHolderViewModel
             {
@@ -116,7 +112,7 @@ namespace Contoso.Apps.Insurance.Data.Mapping
             return destination;
         }
 
-        public static ViewModels.PolicyHolderViewModel MapEntityToViewModel(Data.PolicyHolder source)
+        public static PolicyHolderViewModel MapEntityToViewModel(PolicyHolder source)
         {
             var destination = new PolicyHolderViewModel
             {

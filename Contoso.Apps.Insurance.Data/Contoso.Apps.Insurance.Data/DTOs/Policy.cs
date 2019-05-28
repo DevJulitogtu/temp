@@ -1,14 +1,13 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
 namespace Contoso.Apps.Insurance.Data.DTOs
 {
-
     // Policies
     [DataContract]
+    [Table("Policies")]
     public class Policy
     {
-
         ///<summary>
         /// Id (Primary key)
         ///</summary>
@@ -41,7 +40,5 @@ namespace Contoso.Apps.Insurance.Data.DTOs
 
         [DataMember]
         public int PolicyHolders_Count { get; set; }
-
     }
-
 }

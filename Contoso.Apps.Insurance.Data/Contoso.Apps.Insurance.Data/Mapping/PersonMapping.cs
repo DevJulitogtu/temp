@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Contoso.Apps.Insurance.Data.Mapping
+﻿namespace Contoso.Apps.Insurance.Data.Mapping
 {
     public static class PersonMapping
     {
-        public static DTOs.Person MapEntityToDto(Data.Person source)
+        public static DTOs.Person MapEntityToDto(Person source)
         {
             var destination = new DTOs.Person
             {
