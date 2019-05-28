@@ -1,0 +1,90 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Policy Holders</h2>
+    <p>
+        <a href="#/PolicyHolder/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Dependents
+            </th>
+            <th>
+                Person
+            </th>
+            <th>
+                Policy
+            </th>
+            <th>
+                Active
+            </th>
+            <th>
+                Policy #
+            </th>
+            <th>
+                Policy Amount
+            </th>
+            <th>
+                Deductible
+            </th>
+            <th>
+                Out of Pocket Max
+            </th>
+            <th>
+                Effective Date
+            </th>
+            <th>
+                Expiration Date
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                    <a ng-href="#Dependent?PolicyHolder={{item.Id }}" >
+                    {{item.Dependents_Count}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Person/{{item.PersonId }}" >
+                    {{item.PersonDisplayName}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Policy/{{item.PolicyId }}" >
+                    {{item.Policy}}
+                    </a>
+            </td>
+            <td>
+                <input type="checkbox" ng-model="item.Active" id="Active" ng-disabled="true" />
+            </td>
+            <td>
+                {{ item.PolicyNumber }}
+            </td>
+            <td>
+                {{ item.PolicyAmount | currency:"$" }}
+            </td>
+            <td>
+                {{ item.Deductible | currency:"$" }}
+            </td>
+            <td>
+                {{ item.OutOfPocketMax | currency:"$" }}
+            </td>
+            <td>
+                {{ item.EffectiveDate | date }}
+            </td>
+            <td>
+                {{ item.ExpirationDate | date }}
+            </td>
+            <td>
+                <a ng-href="#/PolicyHolder/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/PolicyHolder/{{item.Id}}">Details</a> |
+                <a ng-href="#/PolicyHolder/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

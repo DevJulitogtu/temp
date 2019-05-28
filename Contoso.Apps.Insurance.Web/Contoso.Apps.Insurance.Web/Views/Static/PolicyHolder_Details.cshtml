@@ -1,0 +1,146 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Policy Holder Details</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Dependents" class = "control-label col-md-2">
+                 Dependents
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Dependent?PolicyHolder={{data.Id }}" >
+                    {{data.Dependents_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Person" class = "control-label col-md-2">
+                 Person
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Person/{{data.PersonId}}" >
+                    {{data.Person.DisplayName}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Policy" class = "control-label col-md-2">
+                 Policy
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Policy/{{data.PolicyId}}" >
+                    {{data.Policy.Name}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Active" class = "control-label col-md-2">
+                Active
+                </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.Active" id="Active" ng-disabled="true" />
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="StartDate" class = "control-label col-md-2">
+                Start Date
+                </label>
+                <div class="col-md-10">
+                    {{data.StartDate | date}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="EndDate" class = "control-label col-md-2">
+                End Date
+                </label>
+                <div class="col-md-10">
+                    {{data.EndDate | date}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Username" class = "control-label col-md-2">
+                Username
+                </label>
+                <div class="col-md-10">
+                    {{data.Username}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyNumber" class = "control-label col-md-2">
+                Policy #
+                </label>
+                <div class="col-md-10">
+                    {{data.PolicyNumber}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="FilePath" class = "control-label col-md-2">
+                File Path
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="{{azureFunctionsProxyUrl}}">
+                        {{data.FilePath}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyAmount" class = "control-label col-md-2">
+                Policy Amount
+                </label>
+                <div class="col-md-10">
+                    {{data.PolicyAmount | currency:"$"}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Deductible" class = "control-label col-md-2">
+                Deductible
+                </label>
+                <div class="col-md-10">
+                    {{data.Deductible | currency:"$"}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="OutOfPocketMax" class = "control-label col-md-2">
+                Out of Pocket Max
+                </label>
+                <div class="col-md-10">
+                    {{data.OutOfPocketMax | currency:"$"}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="EffectiveDate" class = "control-label col-md-2">
+                Effective Date
+                </label>
+                <div class="col-md-10">
+                    {{data.EffectiveDate | date}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="ExpirationDate" class = "control-label col-md-2">
+                Expiration Date
+                </label>
+                <div class="col-md-10">
+                    {{data.ExpirationDate | date}}
+                </div>
+            </div>
+    
+           
+        </div>
+    
+    <div>
+        <a href="#/PolicyHolder">Back to List</a>
+    </div>

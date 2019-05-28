@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Dependent</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Dependent}}?
+            <div class="form-group">
+                <label for="Person" class = "control-label col-md-2">
+                 Person
+                </label>
+                <div class="col-md-10">
+                    {{data.Person.DisplayName}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyHolder" class = "control-label col-md-2">
+                 PolicyHolder
+                </label>
+                <div class="col-md-10">
+                    {{data.PolicyHolderName}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Active" class = "control-label col-md-2">
+                Active
+                </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.Active" id="Active" ng-disabled="true" />
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Delete" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    @*<div>
+        <a href="#/Dependent">Back to List</a>
+    </div>*@

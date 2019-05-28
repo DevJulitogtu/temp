@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Policy</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Policy}}?
+            <div class="form-group">
+                <label for="PolicyHolders" class = "control-label col-md-2">
+                 PolicyHolders
+                </label>
+                <div class="col-md-10">
+                    {{data.PolicyHolders_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Description" class = "control-label col-md-2">
+                Description
+                </label>
+                <div class="col-md-10">
+                    {{data.Description}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="DefaultDeductible" class = "control-label col-md-2">
+                DefaultDeductible
+                </label>
+                <div class="col-md-10">
+                    {{data.DefaultDeductible}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="DefaultOutOfPocketMax" class = "control-label col-md-2">
+                DefaultOutOfPocketMax
+                </label>
+                <div class="col-md-10">
+                    {{data.DefaultOutOfPocketMax}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/Policy">Back to List</a>
+    </div>

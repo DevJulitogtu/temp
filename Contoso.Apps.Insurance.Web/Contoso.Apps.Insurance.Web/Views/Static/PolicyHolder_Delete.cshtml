@@ -1,0 +1,143 @@
+﻿@{
+    Layout = null;
+}
+    <h2>PolicyHolder</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{PolicyHolder}}?
+            <div class="form-group">
+                <label for="Dependents" class = "control-label col-md-2">
+                 Dependents
+                </label>
+                <div class="col-md-10">
+                    {{data.Dependents_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Person" class = "control-label col-md-2">
+                 Person
+                </label>
+                <div class="col-md-10">
+                    {{data.Person_FName}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Policy" class = "control-label col-md-2">
+                 Policy
+                </label>
+                <div class="col-md-10">
+                    {{data.Policy_Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Active" class = "control-label col-md-2">
+                Active
+                </label>
+                <div class="col-md-10">
+                    {{data.Active}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="StartDate" class = "control-label col-md-2">
+                StartDate
+                </label>
+                <div class="col-md-10">
+                    {{data.StartDate}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="EndDate" class = "control-label col-md-2">
+                EndDate
+                </label>
+                <div class="col-md-10">
+                    {{data.EndDate}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Username" class = "control-label col-md-2">
+                Username
+                </label>
+                <div class="col-md-10">
+                    {{data.Username}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyNumber" class = "control-label col-md-2">
+                PolicyNumber
+                </label>
+                <div class="col-md-10">
+                    {{data.PolicyNumber}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="FilePath" class = "control-label col-md-2">
+                FilePath
+                </label>
+                <div class="col-md-10">
+                    {{data.FilePath}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyAmount" class = "control-label col-md-2">
+                PolicyAmount
+                </label>
+                <div class="col-md-10">
+                    {{data.PolicyAmount}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Deductible" class = "control-label col-md-2">
+                Deductible
+                </label>
+                <div class="col-md-10">
+                    {{data.Deductible}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="OutOfPocketMax" class = "control-label col-md-2">
+                OutOfPocketMax
+                </label>
+                <div class="col-md-10">
+                    {{data.OutOfPocketMax}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="EffectiveDate" class = "control-label col-md-2">
+                EffectiveDate
+                </label>
+                <div class="col-md-10">
+                    {{data.EffectiveDate}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="ExpirationDate" class = "control-label col-md-2">
+                ExpirationDate
+                </label>
+                <div class="col-md-10">
+                    {{data.ExpirationDate}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Delete" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/PolicyHolder">Back to List</a>
+    </div>

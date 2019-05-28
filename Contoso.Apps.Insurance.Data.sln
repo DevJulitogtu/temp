@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{22F6A1FC-037B-4589-ABC7-1F822E01093D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Insurance.Web", "Contoso.Apps.Insurance.Web\Contoso.Apps.Insurance.Web\Contoso.Apps.Insurance.Web.csproj", "{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Insurance.WebAPI", "Contoso.Apps.Insurance.WebAPI\Contoso.Apps.Insurance.WebAPI\Contoso.Apps.Insurance.WebAPI.csproj", "{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Methods", "Data Methods", "{8DFAE99B-CF24-4613-89B7-2B6C7BB20B46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Insurance.Data", "Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data.csproj", "{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{750F9980-F1F3-4E44-B1AD-AA33DAEA0919} = {22F6A1FC-037B-4589-ABC7-1F822E01093D}
+		{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF} = {22F6A1FC-037B-4589-ABC7-1F822E01093D}
+		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A} = {8DFAE99B-CF24-4613-89B7-2B6C7BB20B46}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB7DF7D4-E549-46E2-BA26-0CDEE9484B56}
+	EndGlobalSection
+EndGlobal

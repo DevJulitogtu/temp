@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    input.ng-invalid {
+        background-color: lightpink;
+    }
+    input.placeholder {
+        color: lightgray;
+    }
+    .error { color: red; }
+    input.ng-valid {
+        border: lightgreen solid 1px;
+    }
+</style>
+
+    <h2>Policy Holder</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="PersonId" class = "control-label col-md-2"> Person </label>
+                <div class="col-md-10">
+                    <select ng-model="data.PersonId" name="PersonId"  class="form-control" required
+                            ng-options="option.Id as option.DisplayName for option in PersonId_options">
+                        <option value="">-- choose Person --</option>
+                    </select>
+                    <div class="error" ng-show="theForm.PersonId.$error.required">
+                        Person is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Active" class = "control-label col-md-2"> Active </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.Active" name="Active"  class="form-control"/>
+                    <div id="validation_for_Active"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="StartDate" class = "control-label col-md-2"> Start Date </label>
+                <div class="col-md-10">
+                    <input type="date" ng-model="data.StartDate" name="StartDate" class="form-control" format-date/>
+                    <div id="validation_for_StartDate"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="EndDate" class = "control-label col-md-2"> End Date </label>
+                <div class="col-md-10">
+                    <input type="date" ng-model="data.EndDate" name="EndDate"  class="form-control" format-date/>
+                    <div id="validation_for_EndDate"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Username" class = "control-label col-md-2"> Username </label>
+                <div class="col-md-10">
+                    <input type="email" ng-model="data.Username" name="Username" required class="form-control"/>
+                    <div class="error" ng-show="theForm.Username.$error.required">
+                        Username is required
+                    </div>
+                    <div class="error" ng-show="theForm.Username.$error.email">
+                        Username should be a proper email format
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyNumber" class = "control-label col-md-2"> Policy # </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.PolicyNumber" name="PolicyNumber"  class="form-control"/>
+                    <div id="validation_for_PolicyNumber"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyId" class = "control-label col-md-2"> Policy </label>
+                <div class="col-md-10">
+                    <select ng-model="data.PolicyId" name="PolicyId"  class="form-control" required
+                            ng-options="option.Id as option.Name for option in PolicyId_options">
+                        <option value="">-- choose Policy --</option>
+                    </select>
+                    <div class="error" ng-show="theForm.PolicyId.$error.required">
+                        Policy is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="FilePath" class = "control-label col-md-2"> File Path </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.FilePath" name="FilePath"  class="form-control"/>
+                    <div id="validation_for_FilePath"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PolicyAmount" class = "control-label col-md-2"> Policy Amount </label>
+                <div class="col-md-10">
+                    <input type="number" ng-model="data.PolicyAmount" name="PolicyAmount" required class="form-control"/>
+                    <div class="error" ng-show="theForm.PolicyAmount.$error.required">
+                        Policy Amount is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Deductible" class = "control-label col-md-2"> Deductible </label>
+                <div class="col-md-10">
+                    <input type="number" ng-model="data.Deductible" name="Deductible" required class="form-control"/>
+                    <div class="error" ng-show="theForm.Deductible.$error.required">
+                        Deductible is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="OutOfPocketMax" class = "control-label col-md-2"> Out of Pocket Max </label>
+                <div class="col-md-10">
+                    <input type="number" ng-model="data.OutOfPocketMax" name="OutOfPocketMax" required class="form-control"/>
+                    <div class="error" ng-show="theForm.OutOfPocketMax.$error.required">
+                        Out of Pocket max is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="EffectiveDate" class = "control-label col-md-2"> Effective Date </label>
+                <div class="col-md-10">
+                    <input type="date" required ng-model="data.EffectiveDate"
+                           name="EffectiveDate" placeholder="MM/dd/yyyy" class="form-control" format-date/>
+                    <div class="error" ng-show="theForm.EffectiveDate.$error.required">
+                        Effective Date is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="ExpirationDate" class = "control-label col-md-2"> Expiration Date </label>
+                <div class="col-md-10">
+                    <input type="date" required ng-model="data.ExpirationDate"
+                           name="ExpirationDate" placeholder="MM/dd/yyyy" class="form-control" format-date/>
+                    <div class="error" ng-show="theForm.ExpirationDate.$error.required">
+                        Expiration Date is required
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()"
+                           ng-disabled="!theForm.$valid" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/PolicyHolder">Back to List</a>
+    </div>

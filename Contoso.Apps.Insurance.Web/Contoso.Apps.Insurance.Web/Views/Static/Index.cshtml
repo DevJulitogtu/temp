@@ -1,0 +1,142 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="policyConnect">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoso Insurance PolicyConnect</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <script type="text/javascript">
+            if (!contoso) var contoso = {};
+            if (!contoso.policyconnect) contoso.policyconnect = {};
+            contoso.policyconnect.vars = {
+                rootPath: '@Configuration.RootWebApiPath',
+                tenant: '@Configuration.Tenant',
+                webClientId: '@Configuration.WebClientId',
+                webApiAppId: '@Configuration.WebApiAppId',
+                azureFunctionsProxyUrl: '@Configuration.AzureFunctionsProxyUrl'
+            }
+        </script>*@
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  navbar-light bg-white border-bottom box-shadow mb-3 navbar-inverse">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/CI-Icon-badge.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/static#/PolicyHolder">Manage Policy Holders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/static#/Person">People</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/static#/Policy">Policies</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="@Url.Action("Index", "Home", new {area = ""})" class="navbar-brand">
+                        <img src="~/images/CI-Icon-badge.png" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" ng-controller="MainMenu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/static#/PolicyHolder" class="navbar-brand">Manage Policy Holders</a>
+                        </li>
+                        <li>
+                            <a href="/static#/Person" class="navbar-brand">People</a>
+                        </li>
+                        <li>
+                            <a href="/static#/Policy" class="navbar-brand">Policies</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="btn btn-link" ng-show="userInfo.isAuthenticated" ng-click="logout()">Logout</a></li>
+                        <li><a class="btn btn-link" ng-hide="userInfo.isAuthenticated" ng-click="login()">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <div class="container body-content">
+        <ng-view />
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Contoso Insurance PolicyConnect &reg;</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.js"></script>
+
+    <script src="~/js/app/adal-angular.js"></script>
+    <script src="~/js/app/adal.js"></script>
+    <script src="~/js/app/app.js"></script>
+    <script src="~/js/app/DependentControllers.js"></script>
+    <script src="~/js/app/PersonControllers.js"></script>
+    <script src="~/js/app/PolicyControllers.js"></script>
+    <script src="~/js/app/PolicyHolderControllers.js"></script>
+    <script src="~/js/app/_directives.js"></script>
+    <script type="text/javascript">
+        var modules = modules || [];
+        //angular.module('app', modules);
+        angular.module('policyConnect').controller('MainMenu',
+            [
+                '$scope', 'adalAuthenticationService', function ($scope, adalService) {
+                    $scope.modules = modules;
+                    $scope.login = function () {
+                        adalService.login();
+                    };
+                    $scope.logout = function () {
+                        adalService.logOut();
+                    };
+                }
+            ]);
+        angular.module('policyConnect').directive("formatDate",
+            function () {
+                return {
+                    require: 'ngModel',
+                    link: function (scope, elem, attr, modelCtrl) {
+                        modelCtrl.$formatters.push(function (modelValue) {
+                            return new Date(modelValue);
+                        });
+                    }
+                }
+            });
+    </script>
+</body>
+</html>

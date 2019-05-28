@@ -1,0 +1,51 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Policies</h2>
+    <p>
+        <a href="#/Policy/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Policy Holders
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Default Deductible
+            </th>
+            <th>
+                Default Out of Pocket Max
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                    <a ng-href="#PolicyHolder?Policy={{item.Id }}" >
+                    {{item.PolicyHolders_Count}}
+                    </a>
+            </td>
+            <td>
+                {{ item.Name }}
+            </td>
+            <td>
+                {{ item.Description }}
+            </td>
+            <td>
+                {{ item.DefaultDeductible | currency }}
+            </td>
+            <td>
+                {{ item.DefaultOutOfPocketMax | currency }}
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

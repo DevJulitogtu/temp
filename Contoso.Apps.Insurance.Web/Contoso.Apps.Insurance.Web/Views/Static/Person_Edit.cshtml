@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Person</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="FName" class = "control-label col-md-2"> First Name </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.FName" id="FName"  class="form-control"/>
+                    <div id="validation_for_FName"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="LName" class = "control-label col-md-2"> Last Name </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.LName" id="LName"  class="form-control"/>
+                    <div id="validation_for_LName"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Dob" class = "control-label col-md-2"> DOB </label>
+                <div class="col-md-10">
+                    <input type="date" ng-model="data.Dob" id="Dob" class="form-control" format-date/>
+                    <div id="validation_for_Dob"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Address" class = "control-label col-md-2"> Address </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Address" id="Address"  class="form-control"/>
+                    <div id="validation_for_Address"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Address2" class = "control-label col-md-2"> Address 2 </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Address2" id="Address2"  class="form-control"/>
+                    <div id="validation_for_Address2"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="City" class = "control-label col-md-2"> City </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.City" id="City"  class="form-control"/>
+                    <div id="validation_for_City"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Suburb" class = "control-label col-md-2"> Suburb </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Suburb" id="Suburb"  class="form-control"/>
+                    <div id="validation_for_Suburb"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Postcode" class = "control-label col-md-2"> Postcode </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Postcode" id="Postcode"  class="form-control"/>
+                    <div id="validation_for_Postcode"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Person">Back to List</a>
+    </div>
