@@ -25,13 +25,16 @@ namespace Contoso.Apps.Insurance.Data
             //System.Data.Entity.Database.SetInitializer<ContosoInsuranceContext>(null);
         }
 
+
+        // TODO: review
         public ContosoInsuranceContext()
-            : base("Name=ContosoInsuranceContext")
+            //: base("Name=ContosoInsuranceContext")
         {
         }
 
+        // TODO: review
         public ContosoInsuranceContext(string connectionString)
-            : base(connectionString)
+            //: base(connectionString)
         {
         }
 
@@ -40,10 +43,10 @@ namespace Contoso.Apps.Insurance.Data
         //{
         //}
 
-        public ContosoInsuranceContext(System.Data.Common.DbConnection existingConnection, bool contextOwnsConnection)
-            : base(existingConnection, contextOwnsConnection)
-        {
-        }
+        //public ContosoInsuranceContext(System.Data.Common.DbConnection existingConnection, bool contextOwnsConnection)
+        //    : base(existingConnection, contextOwnsConnection)
+        //{
+        //}
 
         //public ContosoInsuranceContext(System.Data.Common.DbConnection existingConnection, System.Data.Entity.Infrastructure.DbCompiledModel model, bool contextOwnsConnection)
         //    : base(existingConnection, model, contextOwnsConnection)

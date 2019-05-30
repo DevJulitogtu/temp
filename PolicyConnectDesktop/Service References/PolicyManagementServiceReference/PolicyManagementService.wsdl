@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PolicyManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="wsHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpsToken RequireClientCertificate="false" />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:SignedSupportingTokens>
+                      <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:WssUsernameToken10 />
+                          </wsp:Policy>
+                        </sp:UsernameToken>
+                      </wsp:Policy>
+                    </sp:SignedSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy />
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost:44321/PolicyManagementService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost:44321/PolicyManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:44321/PolicyManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Contoso.Apps.Insurance.Data.DTOs" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPolicyManagementService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetAllPeople_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPeople" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetAllPeople_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPeopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPeopleWhoAreNotPolicyHolders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleWhoAreNotPolicyHolders" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPeopleWhoAreNotPolicyHolders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleWhoAreNotPolicyHoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPolicyHolders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyHolders" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPolicyHolders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyHoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPolicies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicies" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPolicies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPoliciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPolicyHolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyHolder" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPolicyHolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyHolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerson" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetDependent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDependent" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetDependent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDependentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetDependentsByPolicyHolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDependentsByPolicyHolder" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_GetDependentsByPolicyHolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDependentsByPolicyHolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_SavePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePerson" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_SavePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_SavePolicyHolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePolicyHolder" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_SavePolicyHolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePolicyHolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_SaveDependent_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDependent" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_SaveDependent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDependentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_DeletePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePerson" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_DeletePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_DeleteDependent_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDependent" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_DeleteDependent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDependentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_DeletePolicyHolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePolicyHolder" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyManagementService_DeletePolicyHolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePolicyHolderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPolicyManagementService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetData" message="tns:IPolicyManagementService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetDataResponse" message="tns:IPolicyManagementService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/Ping" message="tns:IPolicyManagementService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/PingResponse" message="tns:IPolicyManagementService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPeople">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetAllPeople" message="tns:IPolicyManagementService_GetAllPeople_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetAllPeopleResponse" message="tns:IPolicyManagementService_GetAllPeople_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleWhoAreNotPolicyHolders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPeopleWhoAreNotPolicyHolders" message="tns:IPolicyManagementService_GetPeopleWhoAreNotPolicyHolders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPeopleWhoAreNotPolicyHoldersResponse" message="tns:IPolicyManagementService_GetPeopleWhoAreNotPolicyHolders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyHolders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPolicyHolders" message="tns:IPolicyManagementService_GetPolicyHolders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPolicyHoldersResponse" message="tns:IPolicyManagementService_GetPolicyHolders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPolicies" message="tns:IPolicyManagementService_GetPolicies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPoliciesResponse" message="tns:IPolicyManagementService_GetPolicies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyHolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPolicyHolder" message="tns:IPolicyManagementService_GetPolicyHolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPolicyHolderResponse" message="tns:IPolicyManagementService_GetPolicyHolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPerson" message="tns:IPolicyManagementService_GetPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetPersonResponse" message="tns:IPolicyManagementService_GetPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDependent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetDependent" message="tns:IPolicyManagementService_GetDependent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetDependentResponse" message="tns:IPolicyManagementService_GetDependent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentsByPolicyHolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/GetDependentsByPolicyHolder" message="tns:IPolicyManagementService_GetDependentsByPolicyHolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/GetDependentsByPolicyHolderResponse" message="tns:IPolicyManagementService_GetDependentsByPolicyHolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/SavePerson" message="tns:IPolicyManagementService_SavePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/SavePersonResponse" message="tns:IPolicyManagementService_SavePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePolicyHolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/SavePolicyHolder" message="tns:IPolicyManagementService_SavePolicyHolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/SavePolicyHolderResponse" message="tns:IPolicyManagementService_SavePolicyHolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDependent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/SaveDependent" message="tns:IPolicyManagementService_SaveDependent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/SaveDependentResponse" message="tns:IPolicyManagementService_SaveDependent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/DeletePerson" message="tns:IPolicyManagementService_DeletePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/DeletePersonResponse" message="tns:IPolicyManagementService_DeletePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDependent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/DeleteDependent" message="tns:IPolicyManagementService_DeleteDependent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/DeleteDependentResponse" message="tns:IPolicyManagementService_DeleteDependent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePolicyHolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyManagementService/DeletePolicyHolder" message="tns:IPolicyManagementService_DeletePolicyHolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyManagementService/DeletePolicyHolderResponse" message="tns:IPolicyManagementService_DeletePolicyHolder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsHttpEndpoint" type="tns:IPolicyManagementService">
+    <wsp:PolicyReference URI="#wsHttpEndpoint_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPeople">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetAllPeople" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleWhoAreNotPolicyHolders">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetPeopleWhoAreNotPolicyHolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyHolders">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetPolicyHolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicies">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetPolicies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyHolder">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetPolicyHolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependent">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetDependent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentsByPolicyHolder">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/GetDependentsByPolicyHolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePerson">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/SavePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePolicyHolder">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/SavePolicyHolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDependent">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/SaveDependent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/DeletePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDependent">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/DeleteDependent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePolicyHolder">
+      <soap12:operation soapAction="http://tempuri.org/IPolicyManagementService/DeletePolicyHolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PolicyManagementService">
+    <wsdl:port name="wsHttpEndpoint" binding="tns:wsHttpEndpoint">
+      <soap12:address location="https://localhost:44321/PolicyManagementService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost:44321/PolicyManagementService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

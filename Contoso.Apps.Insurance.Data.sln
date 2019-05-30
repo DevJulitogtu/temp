@@ -5,13 +5,27 @@ VisualStudioVersion = 16.0.28917.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{22F6A1FC-037B-4589-ABC7-1F822E01093D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Insurance.Web", "Contoso.Apps.Insurance.Web\Contoso.Apps.Insurance.Web\Contoso.Apps.Insurance.Web.csproj", "{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Apps.Insurance.Web", "Contoso.Apps.Insurance.Web\Contoso.Apps.Insurance.Web\Contoso.Apps.Insurance.Web.csproj", "{750F9980-F1F3-4E44-B1AD-AA33DAEA0919}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Insurance.WebAPI", "Contoso.Apps.Insurance.WebAPI\Contoso.Apps.Insurance.WebAPI\Contoso.Apps.Insurance.WebAPI.csproj", "{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Apps.Insurance.WebAPI", "Contoso.Apps.Insurance.WebAPI\Contoso.Apps.Insurance.WebAPI\Contoso.Apps.Insurance.WebAPI.csproj", "{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Methods", "Data Methods", "{8DFAE99B-CF24-4613-89B7-2B6C7BB20B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Insurance.Data", "Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data.csproj", "{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Apps.Insurance.Data", "Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data.csproj", "{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{498128EE-D78C-47AB-8235-F7C1314F571D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectDesktop", "PolicyConnectDesktop\PolicyConnectDesktop.csproj", "{AC98DD65-C96E-40BB-ADD7-378BEB4671A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common Methods", "Common Methods", "{EB80C9BD-0180-4721-B240-97281F7D8B37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wcf Services", "Wcf Services", "{42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectDataService", "PolicyConnectDataService\PolicyConnectDataService.csproj", "{7125C6B8-7609-4D01-A7B2-EEEE75D43718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectManagementService", "PolicyConnectManagementService\PolicyConnectManagementService.csproj", "{A617A0B8-8C9F-4374-BDF6-0222243A0574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Apps.Common", "Contoso.Apps.Common\Contoso.Apps.Common\Contoso.Apps.Common.csproj", "{09677B30-B60E-475F-9218-AE744B943478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +45,22 @@ Global
 		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC98DD65-C96E-40BB-ADD7-378BEB4671A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC98DD65-C96E-40BB-ADD7-378BEB4671A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC98DD65-C96E-40BB-ADD7-378BEB4671A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC98DD65-C96E-40BB-ADD7-378BEB4671A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09677B30-B60E-475F-9218-AE744B943478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09677B30-B60E-475F-9218-AE744B943478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09677B30-B60E-475F-9218-AE744B943478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09677B30-B60E-475F-9218-AE744B943478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +69,10 @@ Global
 		{750F9980-F1F3-4E44-B1AD-AA33DAEA0919} = {22F6A1FC-037B-4589-ABC7-1F822E01093D}
 		{4AF4A325-5DEF-4FEF-A224-338D3A7DF2EF} = {22F6A1FC-037B-4589-ABC7-1F822E01093D}
 		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A} = {8DFAE99B-CF24-4613-89B7-2B6C7BB20B46}
+		{AC98DD65-C96E-40BB-ADD7-378BEB4671A8} = {498128EE-D78C-47AB-8235-F7C1314F571D}
+		{7125C6B8-7609-4D01-A7B2-EEEE75D43718} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
+		{A617A0B8-8C9F-4374-BDF6-0222243A0574} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
+		{09677B30-B60E-475F-9218-AE744B943478} = {EB80C9BD-0180-4721-B240-97281F7D8B37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB7DF7D4-E549-46E2-BA26-0CDEE9484B56}

@@ -11,7 +11,8 @@ namespace Contoso.Apps.Insurance.Data.Logic
 
         public PersonActions(string connectionString = null)
         {
-            _db = !string.IsNullOrWhiteSpace(connectionString) ? new ContosoInsuranceContext(connectionString) : new ContosoInsuranceContext();
+            // TODO: Review
+            //_db = !string.IsNullOrWhiteSpace(connectionString) ? new ContosoInsuranceContext(connectionString) : new ContosoInsuranceContext();
         }
 
         public IList<Person> GetAllPeople()

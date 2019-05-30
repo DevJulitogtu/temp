@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using Contoso.Apps.Insurance.Data;
 using Contoso.Apps.Insurance.Data.Logic;
 using Contoso.Apps.Insurance.Data.Mapping;
@@ -35,9 +34,9 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         }
 
         // GET api/people/5
-        public Contoso.Apps.Insurance.Data.DTOs.Person GetPerson(int id)
+        public Data.DTOs.Person GetPerson(int id)
         {
-            Contoso.Apps.Insurance.Data.DTOs.Person person;
+            Data.DTOs.Person person;
 
             using (var ctx = new ContosoInsuranceContext(_connectionString))
             {
@@ -47,7 +46,7 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
             return person;
         }
 
-        public int SavePerson(Contoso.Apps.Insurance.Data.DTOs.Person person)
+        public int SavePerson(Data.DTOs.Person person)
         {
             using (var actions = new PersonActions(_connectionString))
             {

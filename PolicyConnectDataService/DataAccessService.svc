@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PolicyConnectDataService.DataAccessService" CodeBehind="DataAccessService.svc.cs" %>

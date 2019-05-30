@@ -11,6 +11,7 @@ namespace Contoso.Apps.Insurance.Data.Logic
 
         public DependentActions(string connectionString = null)
         {
+            // TODO: Review
             _db = !string.IsNullOrWhiteSpace(connectionString) ? new ContosoInsuranceContext(connectionString) : new ContosoInsuranceContext();
         }
 

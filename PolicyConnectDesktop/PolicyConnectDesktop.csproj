@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC98DD65-C96E-40BB-ADD7-378BEB4671A8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolicyConnectDesktop</RootNamespace>
+    <AssemblyName>PolicyConnectDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ci.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.0.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\Contoso.Apps.Insurance.Data\packages\EPPlus.4.0.4\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.13.4.878, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Contoso.Apps.Insurance.Data\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.4\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.13.4.878, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Contoso.Apps.Insurance.Data\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.4\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="money, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Contoso.Apps.Insurance.Data\packages\Money.1.0.1\lib\net40\money.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Contoso.Apps.Insurance.Data\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="Authentication\AuthenticationMethods.cs" />
+    <Compile Include="Authentication\AuthenticationService.cs" />
+    <Compile Include="Authentication\Authenticator.cs" />
+    <Compile Include="Authentication\IAuthenticationService.cs" />
+    <Compile Include="Authentication\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataMethods\IServiceCalls.cs" />
+    <Compile Include="DataMethods\WebApiCalls.cs" />
+    <Compile Include="DataMethods\WcfCalls.cs" />
+    <Compile Include="Domain\CrudOperation.cs" />
+    <Compile Include="Forms\DependentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DependentsForm.designer.cs">
+      <DependentUpon>DependentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PeopleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PeopleForm.designer.cs">
+      <DependentUpon>PeopleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PoliciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PoliciesForm.designer.cs">
+      <DependentUpon>PoliciesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PolicyHoldersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PolicyHoldersForm.designer.cs">
+      <DependentUpon>PolicyHoldersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ConstantHelper.cs" />
+    <Compile Include="Helpers\ToolStripHelper.cs" />
+    <Compile Include="Helpers\WindowHelper.cs" />
+    <Compile Include="IEnumerableExtensions.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PolicyManagementServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddEditDependents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddEditDependents.designer.cs">
+      <DependentUpon>AddEditDependents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddEditPeople.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddEditPeople.designer.cs">
+      <DependentUpon>AddEditPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddEditPolicies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddEditPolicies.designer.cs">
+      <DependentUpon>AddEditPolicies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddEditPolicyHolders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddEditPolicyHolders.designer.cs">
+      <DependentUpon>AddEditPolicyHolders.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Authentication\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DependentsForm.resx">
+      <DependentUpon>DependentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PeopleForm.resx">
+      <DependentUpon>PeopleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PoliciesForm.resx">
+      <DependentUpon>PoliciesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PolicyHoldersForm.resx">
+      <DependentUpon>PolicyHoldersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\AddEditDependents.resx">
+      <DependentUpon>AddEditDependents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddEditPeople.resx">
+      <DependentUpon>AddEditPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddEditPolicies.resx">
+      <DependentUpon>AddEditPolicies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddEditPolicyHolders.resx">
+      <DependentUpon>AddEditPolicyHolders.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.DTOs.Dependent.datasource" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.DTOs.Person.datasource" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.DTOs.Policy.datasource" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.DTOs.PolicyHolder.datasource" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.Person.datasource" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.Policy.datasource" />
+    <None Include="Properties\DataSources\Contoso.Apps.Insurance.Data.PolicyHolder.datasource" />
+    <None Include="Properties\DataSources\PolicyConnectDesktop.Authentication.AuthenticationMethods.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\PolicyManagementServiceReference\PolicyConnectDesktop.PolicyManagementServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PolicyManagementServiceReference\PolicyManagementService.wsdl" />
+    <None Include="Service References\PolicyManagementServiceReference\PolicyManagementService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PolicyManagementServiceReference\PolicyManagementService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PolicyManagementServiceReference\PolicyManagementService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contoso.Apps.Common\Contoso.Apps.Common.csproj">
+      <Project>{4141e7a4-1400-434e-859c-5feac5a108ac}</Project>
+      <Name>Contoso.Apps.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data.csproj">
+      <Project>{14892236-a3e4-4400-8084-e343ba0bdf74}</Project>
+      <Name>Contoso.Apps.Insurance.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ci.ico" />
+    <Content Include="Images\CI-Logo-Med.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CI-Logo-PolicyConnect.png" />
+    <Content Include="Images\CI-Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ci.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\PolicyManagementServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PolicyManagementServiceReference\configuration.svcinfo" />
+    <None Include="Service References\PolicyManagementServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\PolicyManagementServiceReference\PolicyManagementService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PolicyManagementServiceReference\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using Contoso.Apps.Insurance.Data;
 using Contoso.Apps.Insurance.Data.Logic;
 using Contoso.Apps.Insurance.Data.Mapping;
@@ -14,8 +13,6 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         private readonly string _connectionString = EncryptionHelper.SecretConnectionString;
 
         // DELETE api/dependents/5
-        /// <response code="200">Ok.</response>
-        /// <response code="404">NotFound.</response>
         public void DeleteDependent(int dependentId)
         {
             using (var actions = new DependentActions(_connectionString))
@@ -27,8 +24,8 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
         // GET api/dependents/5
         public Dependent GetDependent(int id)
         {
-            Contoso.Apps.Insurance.Data.DTOs.Dependent dependent;
-
+            Dependent dependent;
+            // TODO: Review
             using (var ctx = new ContosoInsuranceContext(_connectionString))
             {
                 dependent = DependentMapping.MapEntityToDto(ctx.Dependents.FirstOrDefault(p => p.Id == id));
@@ -37,9 +34,9 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
             return dependent;
         }
 
-        public IList<Contoso.Apps.Insurance.Data.DTOs.Dependent> GetDependentsByPolicyHolder(int policyHolderId)
+        public IList<Dependent> GetDependentsByPolicyHolder(int policyHolderId)
         {
-            List<Contoso.Apps.Insurance.Data.DTOs.Dependent> dependents;
+            List<Dependent> dependents;
 
             using (var actions = new DependentActions(_connectionString))
             {
@@ -49,7 +46,7 @@ namespace Contoso.Apps.Insurance.WebAPI.Controllers
             return dependents;
         }
 
-        public int SaveDependent(Contoso.Apps.Insurance.Data.DTOs.Dependent dependent)
+        public int SaveDependent(Dependent dependent)
         {
             using (var actions = new DependentActions(_connectionString))
             {
