@@ -121,7 +121,7 @@ namespace PolicyConnectDesktop.DataMethods
             return policyHolder;
         }
 
-        public async Task<int> SavePolicyHolder(PolicyHolder policyHolder)
+        public async Task<int> SavePolicyHolder(Contoso.Apps.Insurance.Data.DTOs.PolicyHolder policyHolder)
         {
             Cursor.Current = Cursors.WaitCursor;
             var id = 0;

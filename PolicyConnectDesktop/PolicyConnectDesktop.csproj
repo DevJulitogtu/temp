@@ -245,8 +245,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contoso.Apps.Common\Contoso.Apps.Common.csproj">
-      <Project>{4141e7a4-1400-434e-859c-5feac5a108ac}</Project>
+    <ProjectReference Include="..\Contoso.Apps.Common\Contoso.Apps.Common\Contoso.Apps.Common.csproj">
+      <Project>{09677b30-b60e-475f-9218-ae744b943478}</Project>
       <Name>Contoso.Apps.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data.csproj">

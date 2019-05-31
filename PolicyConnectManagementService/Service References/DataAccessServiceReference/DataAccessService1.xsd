@@ -35,6 +35,7 @@
       <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
       <xs:element minOccurs="0" name="PersonId" type="xs:int" />
       <xs:element minOccurs="0" name="PolicyHolderId" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyHolderName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Dependent" nillable="true" type="tns:Dependent" />
@@ -49,6 +50,7 @@
       <xs:element minOccurs="0" name="Active" type="xs:boolean" />
       <xs:element minOccurs="0" name="Deductible" type="xs:decimal" />
       <xs:element minOccurs="0" name="Dependents" nillable="true" type="tns:ArrayOfDependent" />
+      <xs:element minOccurs="0" name="Dependents_Count" type="xs:int" />
       <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
@@ -73,6 +75,7 @@
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyHolders_Count" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Policy" nillable="true" type="tns:Policy" />

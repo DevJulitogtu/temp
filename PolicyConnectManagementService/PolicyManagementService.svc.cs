@@ -131,6 +131,7 @@ namespace PolicyConnectManagementService
 
         private DataAccessServiceClient GetDataServiceClient()
         {
+
             var dataAccessServiceClient = new DataAccessServiceClient();
             dataAccessServiceClient.ClientCredentials.UserName.UserName = ConfigurationManager.AppSettings["DataServiceUsername"];
             dataAccessServiceClient.ClientCredentials.UserName.Password = ConfigurationManager.AppSettings["DataServicePassword"];

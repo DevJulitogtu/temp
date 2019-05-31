@@ -89,19 +89,13 @@
     <Content Include="Properties\DataSources\Contoso.Apps.Insurance.Data.DTOs.PolicyHolder.datasource" />
     <Content Include="Properties\DataSources\Contoso.Apps.Insurance.Data.DTOs.Dependent.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DataAccessServiceReference\DataAccessService.disco" />
     <None Include="Service References\DataAccessServiceReference\configuration91.svcinfo" />
     <None Include="Service References\DataAccessServiceReference\configuration.svcinfo" />
-    <None Include="Service References\DataAccessServiceReference\DataAccessService1.disco" />
-    <None Include="Service References\DataAccessServiceReference\DataAccessService1.wsdl" />
-    <None Include="Service References\DataAccessServiceReference\DataAccessService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\DataAccessServiceReference\DataAccessService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\DataAccessServiceReference\DataAccessService32.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\DataAccessServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -116,6 +110,11 @@
     </Compile>
     <Compile Include="IPolicyManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Service References\DataAccessServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +125,16 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\DataAccessServiceReference\DataAccessService.wsdl" />
+    <None Include="Service References\DataAccessServiceReference\DataAccessService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataAccessServiceReference\DataAccessService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataAccessServiceReference\DataAccessService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,13 +146,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\DataAccessServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data\Contoso.Apps.Insurance.Data.csproj">
       <Project>{14892236-a3e4-4400-8084-e343ba0bdf74}</Project>
       <Name>Contoso.Apps.Insurance.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataAccessServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
