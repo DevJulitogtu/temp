@@ -9,6 +9,8 @@ using Contoso.Apps.Insurance.Data.DTOs;
 using Contoso.Apps.Insurance.Data.Mapping;
 using Contoso.Apps.Insurance.Data.ViewModels;
 using PolicyConnectDesktop.PolicyManagementServiceReference;
+using Dependent = Contoso.Apps.Insurance.Data.DTOs.Dependent;
+using PolicyHolder = PolicyConnectDesktop.PolicyManagementServiceReference.PolicyHolder;
 
 namespace PolicyConnectDesktop.DataMethods
 {
@@ -75,7 +77,37 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    policyHolders = client.GetPolicyHolders().ToList().Select(PolicyHolderMapping.MapDtoToViewModel).ToList();
+                    var policyHoldersDto = client
+                        .GetPolicyHolders()
+                        .Select(c => new Contoso.Apps.Insurance.Data.DTOs.PolicyHolder
+                        {
+                            Id = c.Id,
+                            Active = c.Active,
+                            Deductible = c.Deductible,
+                            Dependents = c.Dependents.Select(d => new Dependent
+                            {
+                                Id = d.Id,
+                                Active = d.Active,
+                                PersonId = d.PersonId,
+                                PolicyHolderId = d.PolicyHolderId
+                            }).ToList(),
+                            Dependents_Count = c.Dependents.Length,
+                            EffectiveDate = c.EffectiveDate,
+                            EndDate = c.EndDate,
+                            ExpirationDate = c.ExpirationDate,
+                            FilePath = c.FilePath,
+                            OutOfPocketMax = c.OutOfPocketMax,
+                            PersonId = c.PersonId,
+                            PolicyAmount = c.PolicyAmount,
+                            PolicyId = c.PolicyId,
+                            PolicyNumber = c.PolicyNumber,
+                            StartDate = c.StartDate,
+                            Username = c.Username
+                        })
+                        .ToList();
+
+
+                    policyHolders = policyHoldersDto.Select(PolicyHolderMapping.MapDtoToViewModel).ToList();
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -183,7 +215,17 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    policies = client.GetPolicies().ToList();
+                    policies = client
+                        .GetPolicies()
+                        .Select(c => new Contoso.Apps.Insurance.Data.DTOs.Policy
+                        {
+                            Id = c.Id,
+                            DefaultDeductible = c.DefaultDeductible,
+                            DefaultOutOfPocketMax = c.DefaultOutOfPocketMax,
+                            Description = c.Description,
+                            Name = c.Name
+                        })
+                        .ToList();
                 }
                 catch (MessageSecurityException mex)
                 {
