@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28917.182
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{22F6A1FC-037B-4589-ABC7-1F822E01093D}"
 EndProject
@@ -23,12 +23,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wcf Services", "Wcf Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectDataService", "PolicyConnectDataService\PolicyConnectDataService.csproj", "{7125C6B8-7609-4D01-A7B2-EEEE75D43718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectManagementService", "PolicyConnectManagementService\PolicyConnectManagementService.csproj", "{A617A0B8-8C9F-4374-BDF6-0222243A0574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Apps.Common", "Contoso.Apps.Common\Contoso.Apps.Common\Contoso.Apps.Common.csproj", "{09677B30-B60E-475F-9218-AE744B943478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectManagementService", "..\PolicyConnectManagementService\PolicyConnectManagementService.csproj", "{E52FCAF7-D134-4253-9256-EAE90DFF17F0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718} = {7125C6B8-7609-4D01-A7B2-EEEE75D43718}
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Apps.Common", "Contoso.Apps.Common\Contoso.Apps.Common\Contoso.Apps.Common.csproj", "{09677B30-B60E-475F-9218-AE744B943478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,14 +56,14 @@ Global
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A617A0B8-8C9F-4374-BDF6-0222243A0574}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09677B30-B60E-475F-9218-AE744B943478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09677B30-B60E-475F-9218-AE744B943478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09677B30-B60E-475F-9218-AE744B943478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09677B30-B60E-475F-9218-AE744B943478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,8 +74,8 @@ Global
 		{C472BBE5-3F4E-46FB-B72F-6BB1345A1F1A} = {8DFAE99B-CF24-4613-89B7-2B6C7BB20B46}
 		{AC98DD65-C96E-40BB-ADD7-378BEB4671A8} = {498128EE-D78C-47AB-8235-F7C1314F571D}
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
-		{A617A0B8-8C9F-4374-BDF6-0222243A0574} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
 		{09677B30-B60E-475F-9218-AE744B943478} = {EB80C9BD-0180-4721-B240-97281F7D8B37}
+		{E52FCAF7-D134-4253-9256-EAE90DFF17F0} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB7DF7D4-E549-46E2-BA26-0CDEE9484B56}
