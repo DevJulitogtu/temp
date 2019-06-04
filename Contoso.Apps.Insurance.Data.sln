@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectDataService", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Apps.Common", "Contoso.Apps.Common\Contoso.Apps.Common\Contoso.Apps.Common.csproj", "{09677B30-B60E-475F-9218-AE744B943478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectManagementService", "..\PolicyConnectManagementService\PolicyConnectManagementService.csproj", "{E52FCAF7-D134-4253-9256-EAE90DFF17F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectManagementService", "PolicyConnectManagementService\PolicyConnectManagementService.csproj", "{E52FCAF7-D134-4253-9256-EAE90DFF17F0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718} = {7125C6B8-7609-4D01-A7B2-EEEE75D43718}
 	EndProjectSection

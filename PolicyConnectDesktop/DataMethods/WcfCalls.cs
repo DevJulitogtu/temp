@@ -10,6 +10,7 @@ using Contoso.Apps.Insurance.Data.Mapping;
 using Contoso.Apps.Insurance.Data.ViewModels;
 using PolicyConnectDesktop.PolicyManagementServiceReference;
 using Dependent = Contoso.Apps.Insurance.Data.DTOs.Dependent;
+using Person = PolicyConnectDesktop.PolicyManagementServiceReference.Person;
 using PolicyHolder = PolicyConnectDesktop.PolicyManagementServiceReference.PolicyHolder;
 
 namespace PolicyConnectDesktop.DataMethods
@@ -134,7 +135,14 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    if (id > 0) policyHolder = client.GetPolicyHolder(id);
+                    if (id > 0)
+                    {
+                        PolicyHolder policy = client.GetPolicyHolder(id);
+                        policyHolder = new Contoso.Apps.Insurance.Data.DTOs.PolicyHolder()
+                        {
+
+                        };
+                    }
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -161,7 +169,23 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    id = client.SavePolicyHolder(policyHolder);
+                    id = client.SavePolicyHolder(new PolicyHolder
+                    {
+                        Id = policyHolder.Id,
+                        PersonId = policyHolder.Id,
+                        Active = policyHolder.Active,
+                        Deductible = policyHolder.Deductible,
+                        EffectiveDate = policyHolder.EffectiveDate,
+                        EndDate = policyHolder.EndDate,
+                        ExpirationDate = policyHolder.ExpirationDate,
+                        FilePath = policyHolder.FilePath,
+                        OutOfPocketMax = policyHolder.OutOfPocketMax,
+                        PolicyAmount = policyHolder.PolicyAmount,
+                        PolicyId = policyHolder.PolicyId,
+                        PolicyNumber = policyHolder.PolicyNumber,
+                        StartDate = policyHolder.StartDate,
+                        Username = policyHolder.Username
+                    });
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -254,7 +278,27 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    people = client.GetAllPeople().ToList();
+                    people = client.GetAllPeople()
+                        .Select(c => new Contoso.Apps.Insurance.Data.DTOs.Person
+                        {
+                            Address = c.Address,
+                            Address2 = c.Address2,
+                            City = c.City,
+                            DisplayName = c.DisplayName,
+                            Dob = c.Dob,
+                            FName = c.FName,
+                            LName = c.LName,
+                            Postcode = c.Postcode,
+                            Suburb = c.Suburb,
+                            Dependents = c.Dependents.Select(d => new Contoso.Apps.Insurance.Data.DTOs.Dependent
+                            {
+                                Id = d.Id,
+                                Active = d.Active,
+                                PersonId = d.PersonId,
+                                PolicyHolderId = d.PolicyHolderId
+                            }).ToList()
+                        })
+                        .ToList();
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -280,7 +324,27 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    people = client.GetPeopleWhoAreNotPolicyHolders().ToList();
+                    people = client
+                        .GetPeopleWhoAreNotPolicyHolders()
+                        .Select(c => new Contoso.Apps.Insurance.Data.DTOs.Person()
+                        {
+                            Address = c.Address,
+                            Address2 = c.Address2,
+                            City = c.City,
+                            DisplayName = c.DisplayName,
+                            Dob = c.Dob,
+                            FName = c.FName,
+                            LName = c.LName,
+                            Postcode = c.Postcode,
+                            Suburb = c.Suburb,
+                            Dependents = c.Dependents.Select(d => new Contoso.Apps.Insurance.Data.DTOs.Dependent
+                            {
+                                Id = d.Id,
+                                Active = d.Active,
+                                PersonId = d.PersonId,
+                                PolicyHolderId = d.PolicyHolderId
+                            }).ToList()
+                        }).ToList();
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -306,7 +370,23 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    person = client.GetPerson(id);
+                    var result = client.GetPerson(id);
+                    person.Address = result.Address;
+                    person.Address2 = result.Address2;
+                    person.City = result.City;
+                    person.DisplayName = result.DisplayName;
+                    person.Dob = result.Dob;
+                    person.FName = result.FName;
+                    person.LName = result.LName;
+                    person.Postcode = result.Postcode;
+                    person.Suburb = result.Suburb;
+                    person.Dependents = result.Dependents.Select(d => new Contoso.Apps.Insurance.Data.DTOs.Dependent
+                    {
+                        Id = d.Id,
+                        Active = d.Active,
+                        PersonId = d.PersonId,
+                        PolicyHolderId = d.PolicyHolderId
+                    }).ToList();
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -333,7 +413,18 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    id = client.SavePerson(person);
+                    id = client.SavePerson(new Person
+                    {
+                        Address = person.Address,
+                        Address2 = person.Address2,
+                        City = person.City,
+                        DisplayName = person.DisplayName,
+                        Dob = person.Dob,
+                        FName = person.FName,
+                        LName = person.LName,
+                        Postcode = person.Postcode,
+                        Suburb = person.Suburb,
+                    });
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -387,7 +478,14 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    if (id > 0) dependent = client.GetDependent(id);
+                    if (id > 0)
+                    {
+                        var result = client.GetDependent(id);
+                        dependent.PolicyHolderId = result.PolicyHolderId;
+                        dependent.Active = result.Active;
+                        dependent.PersonId = result.PersonId;
+                        dependent.Id = result.Id;
+                    }
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -414,7 +512,16 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    dependents = client.GetDependentsByPolicyHolder(policyHolderId).ToList();
+                    dependents = client
+                        .GetDependentsByPolicyHolder(policyHolderId)
+                        .Select(c => new Contoso.Apps.Insurance.Data.DTOs.Dependent()
+                        {
+                            Active = c.Active,
+                            PolicyHolderId = c.PolicyHolderId,
+                            PersonId = c.PersonId,
+                            Id = c.Id,
+                        })
+                        .ToList();
                 }
                 catch (MessageSecurityException mex)
                 {
@@ -441,7 +548,12 @@ namespace PolicyConnectDesktop.DataMethods
             {
                 try
                 {
-                    id = client.SaveDependent(dependent);
+                    id = client.SaveDependent(new PolicyManagementServiceReference.Dependent()
+                    {
+                        Active = dependent.Active,
+                        PersonId = dependent.PersonId,
+                        PolicyHolderId = dependent.PolicyHolderId
+                    });
                 }
                 catch (MessageSecurityException mex)
                 {
