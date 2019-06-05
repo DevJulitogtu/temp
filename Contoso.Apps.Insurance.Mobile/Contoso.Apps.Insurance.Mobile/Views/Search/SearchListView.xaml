@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:NonPersistentSelectedItemListView
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="CIMobile.Views.Search.SearchListView"
+xmlns:views="clr-namespace:CIMobile.Views"
+xmlns:statics="clr-namespace:CIMobile.Statics"
+xmlns:converters="clr-namespace:CIMobile.Converters"
+	HasUnevenRows="false"
+	RowHeight="{x:Static statics:RowSizes.LargeRowHeightInt}"
+	SeparatorColor="{x:Static statics:Palette._013}">
+  <views:NonPersistentSelectedItemListView.Resources>
+    <ResourceDictionary>
+      <converters:InverseBooleanConverter x:Key="boolInverter" />
+    </ResourceDictionary>
+  </views:NonPersistentSelectedItemListView.Resources>
+    <views:NonPersistentSelectedItemListView.Header>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <BoxView Grid.ColumnSpan="4"
+                     Grid.Row="0"
+                                 Grid.RowSpan="4"
+                                 BackgroundColor="#002157"/>
+            <Label             
+                Grid.ColumnSpan="2"
+                Grid.Column="1"
+                            Grid.Row="1"
+                            FontSize="Large"
+                            Text="Policy #"
+                            TextColor="White"/>
+            <Entry
+                Grid.Column="1"
+                Grid.Row="2"
+                Text="{Binding PolicyNumber}"></Entry>
+            <Button
+                Grid.Column="2"
+                Grid.Row="2"
+                Text="Search"></Button>
+            
+        </Grid>
+    </views:NonPersistentSelectedItemListView.Header>
+    <views:NonPersistentSelectedItemListView.ItemTemplate>
+        <DataTemplate>
+      <ViewCell StyleId="disclosure">
+        <ContentView Padding="20,0" BackgroundColor="White">
+          <RelativeLayout>
+
+            <Label
+						x:Name="CompanyLabel"
+						Text="{Binding metadata_storage_name}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+						TextColor="{x:Static statics:Palette._006}"
+						FontSize="{x:Static statics:FontSizes._120PercentOfSmall}"
+						XAlign="Start"
+						YAlign="End"
+						LineBreakMode="TailTruncation" />
+
+            <Label
+						x:Name="ContactName"
+						Text="{Binding metadata_storage_last_modified}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+						TextColor="{x:Static statics:Palette._007}"
+						FontSize="Small"
+						XAlign="Start"
+						YAlign="Start"
+						LineBreakMode="TailTruncation" />
+
+          </RelativeLayout>
+        </ContentView>
+      </ViewCell>
+    </DataTemplate>
+  </views:NonPersistentSelectedItemListView.ItemTemplate>
+</views:NonPersistentSelectedItemListView >

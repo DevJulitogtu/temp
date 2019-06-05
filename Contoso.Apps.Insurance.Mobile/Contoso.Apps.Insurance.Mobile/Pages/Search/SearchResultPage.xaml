@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:SearchResultPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIMobile.Pages.Search.SearchResultPage"
+             xmlns:page="clr-namespace:CIMobile.Pages.Search"
+             xmlns:statics="clr-namespace:CIMobile.Statics">
+  <ScrollView BackgroundColor="White">
+    <StackLayout
+		Spacing="0">
+      <ContentView
+			x:Name="headerLabelsView"
+			Padding="20, 0">
+        <RelativeLayout
+				x:Name="headerLabelsRelativeLayout"
+				HeightRequest="{x:Static statics:RowSizes.LargeRowHeightDouble}">
+          <Label
+					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+					RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+					x:Name="companyNameLabel"
+					Text="{Binding Result.metadata_storage_name}"
+					TextColor="{x:Static statics:Palette._006}"
+					FontSize="Medium"
+					HorizontalTextAlignment="Start"
+					VerticalTextAlignment="Start"
+					LineBreakMode="TailTruncation" />
+          <Label
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+					RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+					x:Name="companyTitleLabel"
+					Text="{Binding Result.metadata_storage_last_modified}"
+					TextColor="{x:Static statics:Palette._007}"
+					FontSize="Small"
+					HorizontalTextAlignment="Start"
+					VerticalTextAlignment="End"
+					LineBreakMode="TailTruncation" />
+
+          <Label Text="{Binding Result.content}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        </RelativeLayout>
+      </ContentView>
+      <Grid x:Name="orderDetailsGrid" Padding="20">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.Children>
+
+          <ContentView
+					Grid.Row="0"
+					Grid.Column="0">
+            <Label
+						Text="{Binding Result.content}"
+						VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+              <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color" iOS="{x:Static statics:Palette._007}" Android="{x:Static statics:Palette._004}" WinPhone="{x:Static statics:Palette._007}" />
+              </Label.TextColor>
+            </Label>
+          </ContentView>
+
+          <ContentView
+					Grid.Row="1"
+					Grid.Column="0"
+					HeightRequest="{x:Static statics:RowSizes.LargeRowHeightDouble}">
+            <Button Text="Download PDF" Clicked="Button_OnClicked"></Button>
+          </ContentView>
+          
+        </Grid.Children>
+      </Grid>
+	  </StackLayout>
+    </ScrollView>
+</page:SearchResultPageXaml>

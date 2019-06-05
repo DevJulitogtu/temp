@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:PolicyHoldersPageXaml
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="CIMobile.Pages.PolicyHolders.PolicyHoldersPage"
+xmlns:base="clr-namespace:CIMobile.Pages.PolicyHolders"
+xmlns:peopleViews="clr-namespace:CIMobile.Views.PolicyHolders">
+    <peopleViews:PolicyHoldersListView
+	IsPullToRefreshEnabled="True"
+	ItemsSource="{Binding PolicyHolders}"
+	RefreshCommand="{Binding LoadPolicyHoldersRefreshCommand}"
+	IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+	ItemTapped="PolicyHoldersItemTapped" />
+</base:PolicyHoldersPageXaml>

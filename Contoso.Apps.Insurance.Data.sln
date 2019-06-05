@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{22F6A1FC-037B-4589-ABC7-1F822E01093D}"
 EndProject
@@ -30,7 +30,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyConnectManagementServ
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718} = {7125C6B8-7609-4D01-A7B2-EEEE75D43718}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{577855D1-32A5-4180-B370-988CAA4CA6C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIMobile.Droid", "Contoso.Apps.Insurance.Mobile\Contoso.Apps.Insurance.Mobile.Droid\CIMobile.Droid.csproj", "{A749FB62-77C1-4F88-B307-60B041F79863}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CIMobile", "Contoso.Apps.Insurance.Mobile\Contoso.Apps.Insurance.Mobile\CIMobile.shproj", "{541798FD-5E8F-455B-A1A1-84478FE64533}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Contoso.Apps.Insurance.Mobile\Contoso.Apps.Insurance.Mobile\Contoso.Apps.Insurance.Mobile.projitems*{541798fd-5e8f-455b-a1a1-84478fe64533}*SharedItemsImports = 13
+		Contoso.Apps.Insurance.Mobile\Contoso.Apps.Insurance.Mobile\Contoso.Apps.Insurance.Mobile.projitems*{a749fb62-77c1-4f88-b307-60b041f79863}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -64,6 +74,12 @@ Global
 		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E52FCAF7-D134-4253-9256-EAE90DFF17F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A749FB62-77C1-4F88-B307-60B041F79863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A749FB62-77C1-4F88-B307-60B041F79863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A749FB62-77C1-4F88-B307-60B041F79863}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A749FB62-77C1-4F88-B307-60B041F79863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A749FB62-77C1-4F88-B307-60B041F79863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A749FB62-77C1-4F88-B307-60B041F79863}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +92,8 @@ Global
 		{7125C6B8-7609-4D01-A7B2-EEEE75D43718} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
 		{09677B30-B60E-475F-9218-AE744B943478} = {EB80C9BD-0180-4721-B240-97281F7D8B37}
 		{E52FCAF7-D134-4253-9256-EAE90DFF17F0} = {42A29B7B-27FC-426B-BE40-EDE0E1BADDF9}
+		{A749FB62-77C1-4F88-B307-60B041F79863} = {577855D1-32A5-4180-B370-988CAA4CA6C6}
+		{541798FD-5E8F-455B-A1A1-84478FE64533} = {577855D1-32A5-4180-B370-988CAA4CA6C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB7DF7D4-E549-46E2-BA26-0CDEE9484B56}

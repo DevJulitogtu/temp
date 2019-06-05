@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:PeoplePageXaml
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="CIMobile.Pages.People.PeoplePage"
+xmlns:base="clr-namespace:CIMobile.Pages.People"
+xmlns:peopleViews="clr-namespace:CIMobile.Views.People">
+  <peopleViews:PeopleListView
+	IsPullToRefreshEnabled="True"
+	ItemsSource="{Binding People}"
+	RefreshCommand="{Binding LoadPeopleRefreshCommand}"
+	IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+	ItemTapped="PeopleItemTapped" />
+</base:PeoplePageXaml>

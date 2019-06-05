@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!---Note that SplashPageXaml is a type defined at the bottom of the SplashPageXaml.cs file -->
+<page:SplashPageXaml
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="CIMobile.Pages.Splash.SplashPage"
+  xmlns:app="clr-namespace:CIMobile"
+  xmlns:page="clr-namespace:CIMobile.Pages.Splash"
+  xmlns:statics="clr-namespace:CIMobile.Statics"
+  xmlns:converters="clr-namespace:CIMobile.Converters"
+	BackgroundColor="#00acda">
+    <page:SplashPageXaml.Resources>
+        <ResourceDictionary>
+            <converters:InverseBooleanConverter x:Key="boolInverter" />
+            <converters:BoolToLabelOpacityConverter x:Key="boolToLabelOpactityConverter" />
+        </ResourceDictionary>
+    </page:SplashPageXaml.Resources>
+    <page:SplashPageXaml.Content>
+        <AbsoluteLayout>
+            <StackLayout
+				Spacing="0"
+				AbsoluteLayout.LayoutBounds="0, 0.1, 1, AutoSize"
+	         	AbsoluteLayout.LayoutFlags="YProportional,WidthProportional">
+                <Image
+                    WidthRequest="599"
+                    HeightRequest="250"
+                    Aspect="AspectFit"
+                    Source="logo.png"
+                    VerticalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout
+				Spacing="0"
+				AbsoluteLayout.LayoutBounds="0, 1, 1, AutoSize"
+	         	AbsoluteLayout.LayoutFlags="YProportional,WidthProportional">
+                <ContentView
+					BackgroundColor="{x:Static statics:Palette._001}"
+					Padding="20">
+                    <StackLayout>
+                        <ContentView Padding="0,0,0,20">
+                            <AbsoluteLayout
+								VerticalOptions="FillAndExpand"
+								HorizontalOptions="FillAndExpand">
+                                <Label
+									x:Name="SignInButton"
+									Scale="0"
+									Text="Sign In"
+									TextColor="White"
+									BackgroundColor="{x:Static statics:Palette._002}"
+									XAlign="Center"
+									YAlign="Center"
+									HeightRequest="44"
+									IsEnabled="{Binding IsPresentingLoginUI, Converter={StaticResource boolInverter}}"
+									Opacity="{Binding IsPresentingLoginUI, Converter={StaticResource boolToLabelOpactityConverter}}"
+									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+									AbsoluteLayout.LayoutFlags="All" />
+                                <ActivityIndicator
+									x:Name="SignInButtonActivityIndicator"
+									IsEnabled="{Binding IsPresentingLoginUI}"
+									IsVisible="{Binding IsPresentingLoginUI}"
+									IsRunning="{Binding IsPresentingLoginUI}"
+									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+									AbsoluteLayout.LayoutFlags="All" />
+                            </AbsoluteLayout>
+                        </ContentView>
+                        <!--<ContentView Padding="0,0,0,20">
+                            <Label
+								x:Name="SkipSignInButton"
+								Scale="0"
+								Text="Skip Sign In"
+								TextColor="White"
+								BackgroundColor="{x:Static statics:Palette._002}"
+								XAlign="Center"
+								YAlign="Center"
+								HeightRequest="44"
+								IsEnabled="{Binding IsPresentingLoginUI, Converter={StaticResource boolInverter}}"
+								Opacity="{Binding IsPresentingLoginUI, Converter={StaticResource boolToLabelOpactityConverter}}" />
+                        </ContentView>-->
+                    </StackLayout>
+                </ContentView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </page:SplashPageXaml.Content>
+</page:SplashPageXaml>

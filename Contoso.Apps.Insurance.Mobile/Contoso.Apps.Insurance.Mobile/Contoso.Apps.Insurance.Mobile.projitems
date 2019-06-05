@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>541798fd-5e8f-455b-a1a1-84478fe64533</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CIMobile</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cells\PickerCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToLabelOpacityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CategoryTitleConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CompanyLabelBooleanToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ConvertableConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CurrencyDoubleConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\IndustryLabelBooleanToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\IntToBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\InvertedBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\LoadingLabelHeightConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\OrderListHeaderViewBackgroudColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ShortDatePatternConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ToUpperConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\WholePercentToDecimalPercent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ExceptionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IListExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ObservableCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localization\ILocalize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Local\Grouping.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Local\SearchResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Person.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Policy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PolicyHolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PolicyHolderViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\People\PeoplePage.xaml.cs">
+      <DependentUpon>PeoplePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Policies\PoliciesPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PoliciesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PolicyHolders\PolicyHoldersPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PolicyHoldersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search\CustomWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search\PdfWebViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search\SearchPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search\SearchResultPage.xaml.cs">
+      <DependentUpon>SearchResultPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search\WebViewPage.xaml.cs">
+      <DependentUpon>WebViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search\WebViewPageCS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\Attributes\CurrencyAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\Attributes\DisplayAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Base\ModelBoundContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\RootPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Splash\SplashPage.xaml.cs">
+      <DependentUpon>SplashPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IServiceCalls.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WebApiCalls.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Statics\Fonts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Statics\FontSizes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Statics\MessagingServiceConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Statics\Palette.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Statics\RowSizes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Statics\Thicknesses.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\People\PeopleViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Policies\PoliciesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PolicyHolders\PolicyHoldersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Search\SearchResultViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Search\SearchViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Splash\SplashViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Base\ModelBoundContentView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FloatingActionButtonView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NonPersistentSelectedItemListView.xaml.cs">
+      <DependentUpon>NonPersistentSelectedItemListView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\People\PeopleListView.xaml.cs">
+      <DependentUpon>PeopleListView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Policies\PoliciesListView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PoliciesListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PolicyHolders\PolicyHoldersListView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PolicyHoldersListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Search\SearchListView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>SearchListView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Policies\PoliciesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\PolicyHolders\PolicyHoldersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Search\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Policies\PoliciesListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PolicyHolders\PolicyHoldersListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Search\SearchListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Splash\SplashPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\People\PeopleListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NonPersistentSelectedItemListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\People\PeoplePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Search\SearchResultPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\Search\WebViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
